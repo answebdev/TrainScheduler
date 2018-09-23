@@ -6,6 +6,8 @@
     <title>Train Scheduler</title>
     <link rel="icon" href="assets/images/train 01.png">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Added link to Bootstrap-->
@@ -19,64 +21,45 @@
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4" id="jumbo-header">Anytime is Train Time</h1>
+                <h1 class="display-4" id="jumbo-header"><i class="fas fa-train"></i> Anytime is Train Time</h1>
                 <p class="lead" id="jumbo-lead">Choo Choo. Chee Chee.</p>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <strong>Current Train Schedule</strong>
                     </div>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Train Name</th>
-                                <th scope="col">Destination</th>
-                                <th scope="col">Frequency (min)</th>
-                                <th scope="col">Next Arrival</th>
-                                <th scope="col">Minutes Away</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- <th scope="row">Trenton Express</th> -->
-                                <td>Trenton Express</td>
-                                <td>Trenton</td>
-                                <td>25</td>
-                                <td>05:35 PM</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="card-body">
+                        <table class="table table-sm table-hover" id='employee-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="col-lg-12">
-
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong><i class="fa fa-list-alt"></i> Add Train</strong>
+                        <strong>Add Train</strong>
                     </div>
                     <div class="card-body">
                         <form role="form">
                             <div class="form-group">
-                                <label for="search"><strong>Train Time</strong></label>
+                                <label for="search"><strong>Train Name</strong></label>
                                 <input type="text" class="form-control" id="search-term">
                             </div>
                             <div class="form-group">
@@ -91,8 +74,7 @@
                                 <label for="end-year"><strong>Frequency (min)</strong></label>
                                 <input type="text" class="form-control" id="end-year">
                             </div>
-                            <button type="submit" class="btn btn-default" id="submit">
-                                <i class="fa fa-search"></i> Submit</button>
+                            <button type="submit" class="btn btn-default" id="submit">Submit</button>
                         </form>
                     </div>
                 </div>
