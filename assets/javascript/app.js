@@ -12,7 +12,6 @@ firebase.initializeApp(config);
 
 // Create a variable to reference the database
 var database = firebase.database();
-// console.log(database);
 
 var trainName = "";
 var destination = "";
@@ -43,25 +42,15 @@ $("#submit").on("click", function () {
   $("#destinationInput").val("");
   $("#timeInput").val("");
   $("#frequencyInput").val("");
+
   // Because we have a type="submit" button, it's going to reload the page
   // whenever we click it. So, we need "return false" so that it won't
   // reload the page whenever we click submit
   return false;
 })
 
-
-// firebase.database().ref().on("value", function (snapshot) {
-//   $("#name-display").html(snapshot.val().trainName);
-//   $("#destination-display").html(snapshot.val().destination);
-//   $("#frequency-display").html(snapshot.val().firstTrainTime);
-//   $("#arrival-display").html(snapshot.val().frequency);
-//   // $("#minutes-display").html(snapshot.val().name);
-// })
-
-
-
-// 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
-database.ref().on("child_added", function(childSnapshot) {
+// Create Firebase event for adding train data to the database and a row in the html when a user adds an entry
+database.ref().on("child_added", function (childSnapshot) {
   console.log(childSnapshot.val());
 
   // Store everything into a variable.
@@ -69,17 +58,17 @@ database.ref().on("child_added", function(childSnapshot) {
   var dest = childSnapshot.val().destination;
   var time = childSnapshot.val().firstTrainTime;
   var freq = childSnapshot.val().frequency
+  //placeholder for minutes away
+  var away = childSnapshot.val().frequency
 
-  // Employee Info
+  // Train Info
   console.log(train);
   console.log(dest);
   console.log(time);
   console.log(freq);
-// });
+  console.log(away);
 
-
-
-//   // Prettify the employee start
+  //   // Prettify the employee start
   // var empStartPretty = moment.unix(empStart).format("MM/DD/YYYY");
 
   // // Calculate the months worked using hardcore math
@@ -97,6 +86,7 @@ database.ref().on("child_added", function(childSnapshot) {
     $("<td>").text(dest),
     $("<td>").text(time),
     $("<td>").text(freq),
+    $("<td>").text(away),
   );
 
   // Append the new row to the table
