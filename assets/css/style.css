@@ -1,16 +1,9 @@
-/* Colors:
-#7f462c
-rgb(127,70,44)
-
-#337ab7
-rgb(51,122,183) */
-
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #e9ebee;
 }
 
