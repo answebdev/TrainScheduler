@@ -11,7 +11,7 @@ var config = {
 firebase.initializeApp(config);
 
 // Create a variable to reference the database
-// var database = firebase.database();
+var database = firebase.database();
 // console.log(database);
 
 var trainName = "";
@@ -32,7 +32,7 @@ $("#submit").on("click", function () {
   console.log(frequency);
 
   // Upload train data to the database
-  firebase.database().ref().push({
+  database.ref().push({
     trainName: trainName,
     destination: destination,
     firstTrainTime: firstTrainTime,
@@ -61,46 +61,44 @@ $("#submit").on("click", function () {
 
 
 // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
-// firebase.database.ref().on("child_added", function(childSnapshot) {
-//   console.log(childSnapshot.val());
+database.ref().on("child_added", function(childSnapshot) {
+  console.log(childSnapshot.val());
 
-//   // Store everything into a variable.
-//   var train = childSnapshot.val().trainName;
-//   var dest = childSnapshot.val().destination;
-//   var time = childSnapshot.val().firstTrainTime;
-//   var freq = childSnapshot.val().frequency
+  // Store everything into a variable.
+  var train = childSnapshot.val().trainName;
+  var dest = childSnapshot.val().destination;
+  var time = childSnapshot.val().firstTrainTime;
+  var freq = childSnapshot.val().frequency
 
-//   // Employee Info
-//   console.log(train);
-//   console.log(dest);
-//   console.log(time);
-//   console.log(freq);
+  // Employee Info
+  console.log(train);
+  console.log(dest);
+  console.log(time);
+  console.log(freq);
 // });
 
 
 
 //   // Prettify the employee start
-//   var empStartPretty = moment.unix(empStart).format("MM/DD/YYYY");
+  // var empStartPretty = moment.unix(empStart).format("MM/DD/YYYY");
 
-//   // Calculate the months worked using hardcore math
-//   // To calculate the months worked
-//   var empMonths = moment().diff(moment(empStart, "X"), "months");
-//   console.log(empMonths);
+  // // Calculate the months worked using hardcore math
+  // // To calculate the months worked
+  // var empMonths = moment().diff(moment(empStart, "X"), "months");
+  // console.log(empMonths);
 
-//   // Calculate the total billed rate
-//   var empBilled = empMonths * empRate;
-//   console.log(empBilled);
+  // // Calculate the total billed rate
+  // var empBilled = empMonths * empRate;
+  // console.log(empBilled);
 
-//   // Create the new row
-//   var newRow = $("<tr>").append(
-//     $("<td>").text(empName),
-//     $("<td>").text(empRole),
-//     $("<td>").text(empStartPretty),
-//     $("<td>").text(empMonths),
-//     $("<td>").text(empRate),
-//     $("<td>").text(empBilled)
-//   );
+  // Create the new row
+  var newRow = $("<tr>").append(
+    $("<td>").text(train),
+    $("<td>").text(dest),
+    $("<td>").text(time),
+    $("<td>").text(freq),
+  );
 
-//   // Append the new row to the table
-//   $("#employee-table > tbody").append(newRow);
-// });
+  // Append the new row to the table
+  $("#train-table > tbody").append(newRow);
+});
