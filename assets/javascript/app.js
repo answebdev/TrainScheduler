@@ -84,11 +84,33 @@ database.ref().on("child_added", function (childSnapshot) {
   var newRow = $("<tr>").append(
     $("<td>").text(train),
     $("<td>").text(dest),
-    $("<td>").text(time),
     $("<td>").text(freq),
-    $("<td>").text(away),
+    $("<td>").text(time),
+    $("<td>").text(away)
   );
 
   // Append the new row to the table
   $("#train-table > tbody").append(newRow);
+});
+
+
+// Show current time
+var currentTime = moment();
+console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+console.log("Current Time: " + moment(currentTime).format('MMMM Do YYYY, h:mm:ss a'));
+
+// Display current time in browser
+var datetime = null,
+  date = null;
+
+var update = function () {
+  date = moment(new Date())
+  datetime.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+  // datetime.html("<p>Current time: " + date.format('dddd, MMMM Do YYYY, h:mm:ss a') + "</p>");
+};
+
+$(document).ready(function () {
+  datetime = $('#datetime')
+  update();
+  setInterval(update, 1000);   
 });

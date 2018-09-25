@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Train Scheduler</title>
-    <link rel="icon" href="assets/images/train 01.png">
+    <link rel="icon" href="assets/images/train.png">
+    <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <!-- Link to Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
-    <!-- Added link to the jQuery Library -->
+    <!-- Link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Added link to Bootstrap-->
+    <!-- Link to Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Link to Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <!-- Firebase Reference -->
@@ -25,6 +29,7 @@
             <div class="container">
                 <h1 class="display-4" id="jumbo-header"><i class="fas fa-train"></i> Anytime is Train Time</h1>
                 <p class="lead" id="jumbo-lead">Choo Choo. Chee Chee.</p>
+                <p class="text-center" id="datetime"></p>
             </div>
         </div>
         <div class="row">
@@ -84,8 +89,6 @@
         </div>
     </div>
     <br>
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
