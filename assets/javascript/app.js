@@ -20,7 +20,8 @@ var firstTrainTime = "";
 var frequency = 0;
 
 // Grab user input
-$("#submit").on("click", function () {
+$("#submit").on("click", function (event) {
+  event.preventDefault() 
   trainName = $("#trainInput").val().trim();
   destination = $("#destinationInput").val().trim();
   firstTrainTime = $("#timeInput").val().trim();
