@@ -27,4 +27,4 @@ https://answebdev.github.io/TrainScheduler/
 
 ![Screenshot 02](screenshots/trainScheduler_screenshot02.png "Scoreboard")
 
-![Screenshot 03](screenshots/triviaGameDemo.gif "Demo")
+![Screenshot 03](screenshots/trainScheduler_demo.gif "Demo")
