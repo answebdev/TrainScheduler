@@ -23,8 +23,8 @@ https://answebdev.github.io/TrainScheduler/
 
 # Screenshots
 
-![Screenshot 01](screenshots/trainScheduler_screenshot01.png "Trivia Questions")
+![Screenshot 01](screenshots/trainScheduler_screenshot01.png "Train Scheduler")
 
-![Screenshot 02](screenshots/trainScheduler_screenshot02.png "Scoreboard")
+![Screenshot 02](screenshots/trainScheduler_screenshot02.png "Submission Form")
 
 ![Screenshot 03](screenshots/trainScheduler_demo.gif "Demo")
